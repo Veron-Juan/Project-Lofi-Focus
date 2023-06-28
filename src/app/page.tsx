@@ -1,113 +1,212 @@
-import Image from 'next/image'
+import Image from "next/image"
+import Link from "next/link"
+import { Music, PlusCircle, TimerReset, Users } from "lucide-react"
+import { getServerSession } from "next-auth"
+import { useSession } from "next-auth/react"
 
-export default function Home() {
+import { Button, buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+// import {
+//   ContainerSlice,
+//   ContainerSliceRight,
+// } from "@/components/ContainerSlice"
+
+export default async function IndexPage() {
+  const session = await getServerSession()
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div className="overflow-x-hidden">
+      <section className="mx-auto mt-16 flex   max-w-7xl flex-col items-center justify-center px-7 md:items-center    ">
+        <h1 className="text-center text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white   md:text-5xl lg:text-7xl ">
+          Your space for relaxation and concentration
+        </h1>
+
+        <div className="items-center overflow-x-hidden  md:flex  ">
+          <div className="flex max-w-[900px] flex-col md:mb-[40px] md:flex-1   ">
+            {/* <h2 className=" my-3  leading-tight tracking-tighter md:text-4xl text-2xl  text-black dark:text-white">
+            Your space for relaxation and concentration.{" "}
+          </h2> */}
+            <p className=" max-w-[600px] text-[16px] text-muted-foreground md:text-lg">
+              On our website, you can find a wide variety of lofi music, share
+              your favorite songs with other users and discover new artists and
+              songs in the community.
+            </p>
+            <div className="my-8 flex gap-6">
+              <Link
+                href="/lofi"
+                className={buttonVariants({
+                  variant: "default",
+                  size: "default",
+                })}
+              >
+                Get Started
+              </Link>
+              {!session ? (
+                <Link
+                  href="/login"
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "default",
+                  })}
+                >
+                  Login
+                </Link>
+              ) : (
+                <div className="">
+                  <Link
+                    href="community"
+                    className={buttonVariants({
+                      variant: "outline",
+                      size: "default",
+                    })}
+                  >
+                    <PlusCircle className="mr-2  h-4 w-4" />
+                    Add music
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="mt-4 hidden justify-start   md:block">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className=" h-[220px] w-[220px]  md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] "
+              src="/hero.png"
+              alt="hero"
+              width={220}
+              height={220}
+              
             />
-          </a>
+          </div>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="mt-12  flex   gap-6 md:mt-6  ">
+          <Card className=" flex h-[90px] w-[90px] items-center justify-center gap-3 hover:bg-neutral-200/90 dark:hover:bg-inherit  dark:hover:opacity-60 md:h-[120px] md:w-[120px] ">
+            <CardTitle className="text-md flex flex-col items-center gap-2 ">
+              <Music strokeWidth={2.5} />
+              Lofi Music
+            </CardTitle>
+          </Card>
+          <Card className=" flex h-[90px] w-[90px] items-center justify-center gap-3 hover:bg-neutral-200/90 dark:hover:bg-inherit  dark:hover:opacity-60 md:h-[120px] md:w-[120px]">
+            <CardTitle className="text-md flex flex-col items-center gap-2 ">
+              <TimerReset strokeWidth={2.5} />
+              Pomodoro
+            </CardTitle>
+          </Card>
+          <Card className="flex h-[90px] w-[90px] items-center justify-center gap-3 hover:bg-neutral-200/90 dark:hover:bg-inherit  dark:hover:opacity-60 md:h-[120px] md:w-[120px]">
+            <CardTitle className="text-md flex flex-col items-center gap-2">
+              <Users strokeWidth={2.5} />
+              Community
+            </CardTitle>
+          </Card>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* <div className="max-w-[1000px]  flex justify-between items-start mt-2 gap-24 xs:gap-7 xs:flex-col xs:items-center" > */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* <ContainerSlice>
+        <div className=" mt-20 flex  flex-col items-center gap-6 md:mb-40 md:flex-row md:justify-center  md:px-6">
+          <Image
+            src="/sculpturemusicbg.webp"
+            alt="image"
+            className=" rounded-lg  object-cover shadow-xl sm:h-[365px] sm:w-[380px]  "
+            width={315}
+            height={315}
+          />
+          <div className="xs:my-1 xs:text-center flex max-w-[480px]  flex-col  gap-5">
+            <h3 className="ml-6 scroll-m-20 text-4xl font-extrabold tracking-tight text-black dark:text-white md:ml-4 md:text-start lg:text-5xl  ">
+              Lofi Music
+            </h3>
+            <p className="px-7 text-justify md:px-4">
+              Edit photos quickly and accurately without all the effort.
+              PhotoRoom makes it easy to keep the focus on the foreground, plus
+              is 2x more accurate than other apps.
+            </p>
+            <div className="ml-6 text-[15px] md:ml-3 md:text-start">
+              <Link
+                href="/lofi"
+                className={buttonVariants({
+                  variant: "black",
+                  size: "default",
+                })}
+              >
+                Try Now lofi
+              </Link>
+            </div>
+          </div>
+        </div>
+      </ContainerSlice>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+      <ContainerSliceRight>
+        <div className="mt-20  flex flex-col-reverse  items-center gap-7 md:mb-40 md:flex-row md:justify-center   md:px-6  ">
+          <div className="xs:my-1 xs:text-center flex max-w-[480px]  flex-col  gap-5">
+            <h3 className="ml-6 scroll-m-20 text-4xl font-extrabold tracking-tight text-black dark:text-white md:text-5xl ">
+              Pomodoro Tecnique
+            </h3>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <p className="px-7 text-justify md:px-4">
+              Edit photos quickly and accurately without all the effort.
+              PhotoRoom makes it easy to keep the focus on the foreground, plus
+              2x more accurate than other apps.
+            </p>
+            <div className="ml-6 text-[15px] md:ml-3 md:text-start">
+              <Link
+                href="/lofi"
+                className={buttonVariants({
+                  variant: "black",
+                  size: "default",
+                })}
+              >
+                Try Now lofi
+              </Link>
+            </div>
+          </div>
+          <Image
+            src="/pomodorosculpture.webp"
+            alt="image"
+            className=" rounded-lg  object-cover shadow-xl sm:h-[365px] sm:w-[380px]  "
+            width={315}
+            height={315}
+          />
+        </div>
+      </ContainerSliceRight>
+
+      <ContainerSlice>
+        <div className=" mt-20 flex  flex-col items-center gap-6  md:mb-40 md:flex-row  md:justify-center md:px-6">
+          <Image
+            src="/community.webp"
+            alt="image"
+            className=" rounded-lg  object-cover shadow-xl sm:h-[365px] sm:w-[380px]  "
+            width={315}
+            height={315}
+          />
+          <div className="xs:my-1 xs:text-center flex max-w-[480px]  flex-col  gap-5">
+            <h3 className="ml-6 scroll-m-20 text-4xl font-extrabold tracking-tight text-black dark:text-white md:ml-4 md:text-start lg:text-5xl  ">
+              Community
+            </h3>
+            <p className="px-7 text-justify md:px-4">
+              Edit photos quickly and accurately without all the effort.
+              PhotoRoom makes it easy to keep the focus on the foreground, plu
+              2x more accurate than other apps.
+            </p>
+            <div className="ml-6 text-[15px] md:ml-3 md:text-start">
+              <Link
+                href="/lofi"
+                className={buttonVariants({
+                  variant: "black",
+                  size: "default",
+                })}
+              >
+                Try Now lofi
+              </Link>
+            </div>
+          </div>
+        </div>
+      </ContainerSlice> */}
+    </div>
   )
 }
