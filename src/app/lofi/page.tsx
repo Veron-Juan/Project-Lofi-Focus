@@ -1,6 +1,6 @@
 "use client"
 
-import { Metadata } from "next"
+
 import { Suspense, lazy } from "react"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
@@ -39,10 +39,6 @@ import { CardMenuFavs } from "./components/CardMenuFavs"
 
 const AlbumArtwork = lazy(()=> import("./components/album-artwork") )
 
-export const metadata: Metadata = {
-  title: "Music App",
-  description: "Example music app using the components.",
-}
 
 export default function MusicPage() {
   const favorites = useFavoriteStore((state) => state.favorites)
