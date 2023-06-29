@@ -122,9 +122,7 @@ export default async function IndexPage() {
               Lofi Music
             </h3>
             <p className="px-7 text-justify md:px-4">
-              Edit photos quickly and accurately without all the effort.
-              PhotoRoom makes it easy to keep the focus on the foreground, plus
-              is 2x more accurate than other apps.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
@@ -149,9 +147,8 @@ export default async function IndexPage() {
             </h3>
 
             <p className="px-7 text-justify md:px-4">
-              Edit photos quickly and accurately without all the effort.
-              PhotoRoom makes it easy to keep the focus on the foreground, plus
-              2x more accurate than other apps.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
+
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
@@ -189,9 +186,8 @@ export default async function IndexPage() {
               Community
             </h3>
             <p className="px-7 text-justify md:px-4">
-              Edit photos quickly and accurately without all the effort.
-              PhotoRoom makes it easy to keep the focus on the foreground, plu
-              2x more accurate than other apps.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
+
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link

@@ -29,7 +29,7 @@ export default function DemoCreateAccount() {
 
   const sesionStatus = () => {
     if (session.status === "authenticated") {
-      router.replace("/community")
+      router.replace("/")
     }
   }
 
