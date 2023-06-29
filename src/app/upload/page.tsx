@@ -51,7 +51,7 @@ export default function page() {
       
         try {
           const formData = new FormData(event.currentTarget);
-          const response = await axios.post('https://lofi-focus-six.vercel.app/api/posts', {
+          const response = await axios.post('https://lofifocus.vercel.app/api/posts', {
             link: formData.get("link"),
             title: formData.get("title"),
             description: formData.get("description"),

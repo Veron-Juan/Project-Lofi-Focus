@@ -60,7 +60,7 @@ export default function MusicPage() {
         // Mostrar el loader
         setLoading(true)
 
-        const response = await axios.get("https://lofi-focus-six.vercel.app/api/posts")
+        const response = await axios.get("https://lofifocus.vercel.app/api/posts")
         setData(response.data)
 
         // Ocultar el loader

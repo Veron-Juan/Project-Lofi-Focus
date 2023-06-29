@@ -45,7 +45,7 @@ export default function Register() {
     
     try {
       const formData = new FormData(e.currentTarget);
-      const signupResponse = await axios.post("/api/auth/signup", {
+      const signupResponse = await axios.post("https://lofifocus.vercel.app/api/auth/signup", {
         email: formData.get("email"),
         password: formData.get("password"),
         username: formData.get("username"),
