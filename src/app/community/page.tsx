@@ -5,7 +5,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+import Link from "next/link"
 import VideoPlayerCommunity from "./components/VideoPlayerCommunity"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -23,10 +23,6 @@ import { Label } from "@/components/ui/label"
 import { Skeleton } from "@/components/ui/skeleton"
 import LoaderPlayer from "../lofi/components/LoaderPlayer"
 import { cache, useState } from "react"
-import next from "next/types"
-import Link from "next/link"
-import { useFavoriteStore } from "@/store/store"
-
 
 
 
@@ -123,7 +119,7 @@ export default async function CommunityPage() {
                   <div className="flex flex-wrap my-9 justify-center gap-6">
                   {data?.map((i:any)=> {
                   return(
-                    <Card className="w-64 md:w-[270px] lg:w-[330px] h-auto  ml-4 pb-1">
+                    <Card key={i._id} className="w-64 md:w-[270px] lg:w-[330px] h-auto  ml-4 pb-1">
                 
               
               <div className="flex items-center justify-between space-x-4 ml-3 my-4 mr-3">
