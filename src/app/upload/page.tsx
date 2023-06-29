@@ -51,7 +51,7 @@ export default function page() {
       
         try {
           const formData = new FormData(event.currentTarget);
-          const response = await axios.post('/api/posts', {
+          const response = await axios.post('https://lofi-focus-six.vercel.app/api/posts', {
             link: formData.get("link"),
             title: formData.get("title"),
             description: formData.get("description"),
@@ -61,7 +61,7 @@ export default function page() {
           console.log(response);
           if (response.status == 200 || 2001){
             toast.success('Post successfully uploaded')
-            return router.push("/community");
+            return router.push("/lofi");
           } 
           // Maneja la respuesta como desees
         } catch (error) {
