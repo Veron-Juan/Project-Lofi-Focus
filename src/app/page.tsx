@@ -80,6 +80,7 @@ export default async function IndexPage() {
               alt="hero"
               width={220}
               height={220}
+              quality={100}
             />
           </div>
         </div>
