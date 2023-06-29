@@ -60,7 +60,7 @@ export default async function IndexPage() {
               ) : (
                 <div className="">
                   <Link
-                    href="community"
+                    href="uplouad"
                     className={buttonVariants({
                       variant: "outline",
                       size: "default",
