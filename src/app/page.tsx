@@ -74,13 +74,14 @@ export default async function IndexPage() {
             </div>
           </div>
           <div className="mt-4 hidden justify-start   md:block">
-            <Image
+            <img
               className=" h-[220px] w-[220px]  md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] "
-              src="/hero.png"
+              src="/hero.webp"
               alt="hero"
               width={220}
               height={220}
-              quality={100}
+              
+              
             />
           </div>
         </div>
