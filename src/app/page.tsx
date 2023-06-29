@@ -11,10 +11,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-// import {
-//   ContainerSlice,
-//   ContainerSliceRight,
-// } from "@/components/ContainerSlice"
+
+import {
+  ContainerSlice,
+  ContainerSliceRight,
+} from "@/components/ContainerSlice"
 
 export default async function IndexPage() {
   const session = await getServerSession()
@@ -79,7 +80,6 @@ export default async function IndexPage() {
               alt="hero"
               width={220}
               height={220}
-              
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ export default async function IndexPage() {
 
       {/* <div className="max-w-[1000px]  flex justify-between items-start mt-2 gap-24 xs:gap-7 xs:flex-col xs:items-center" > */}
 
-      {/* <ContainerSlice>
+      <ContainerSlice>
         <div className=" mt-20 flex  flex-col items-center gap-6 md:mb-40 md:flex-row md:justify-center  md:px-6">
           <Image
             src="/sculpturemusicbg.webp"
@@ -130,7 +130,7 @@ export default async function IndexPage() {
               <Link
                 href="/lofi"
                 className={buttonVariants({
-                  variant: "black",
+                  variant: "default",
                   size: "default",
                 })}
               >
@@ -157,7 +157,7 @@ export default async function IndexPage() {
               <Link
                 href="/lofi"
                 className={buttonVariants({
-                  variant: "black",
+                  variant: "default",
                   size: "default",
                 })}
               >
@@ -197,7 +197,7 @@ export default async function IndexPage() {
               <Link
                 href="/lofi"
                 className={buttonVariants({
-                  variant: "black",
+                  variant: "default",
                   size: "default",
                 })}
               >
@@ -206,7 +206,7 @@ export default async function IndexPage() {
             </div>
           </div>
         </div>
-      </ContainerSlice> */}
+      </ContainerSlice>
     </div>
   )
 }
