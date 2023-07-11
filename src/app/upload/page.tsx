@@ -32,13 +32,13 @@ export default function page() {
 
     const router = useRouter();
 
-    // if (session.status === "loading") {
-    //     return <p>Loading...</p>;
-    //   }
+    if (session.status === "loading") {
+        return <p>Loading...</p>;
+      }
     
-    //   if (session.status === "unauthenticated") {
-    //     router?.push("/login");
-    //   }
+      if (session.status === "unauthenticated") {
+        router?.push("/login");
+      }
 
     const handleSubmit = async (event:FormEvent<HTMLFormElement>) => {
         event.preventDefault();

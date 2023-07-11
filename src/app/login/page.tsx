@@ -24,15 +24,15 @@ export default function DemoCreateAccount() {
 
   const router = useRouter()
 
-  // const sesionStatus = () => {
-  //   if (session.status === "authenticated") {
-  //     router.replace("/")
-  //   }
-  // }
+  const sesionStatus = () => {
+    if (session.status === "authenticated") {
+      router.replace("/")
+    }
+  }
 
-  // useEffect(() => {
-  //   sesionStatus()
-  // }, [session, router])
+  useEffect(() => {
+    sesionStatus()
+  }, [session, router])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     try {
