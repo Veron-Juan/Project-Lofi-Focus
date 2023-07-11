@@ -4,14 +4,12 @@ import { FormEvent, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 // import { useAuthStore } from "@/store/store"
 import { signIn, useSession } from "next-auth/react"
-import { toast, Toaster } from "sonner"
+
 
 import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -21,7 +19,6 @@ import { Icons } from "@/components/icons"
 import Spinner from "@/components/Spinner"
 
 export default function DemoCreateAccount() {
-  // const { user, setUser } = useAuthStore()
 
   const session = useSession()
 
@@ -56,19 +53,9 @@ export default function DemoCreateAccount() {
         <Spinner />
       ) : (
         <Card>
-          {/* <div className="flex items-center justify-center gap-2 relative mr-12">
-        <div className="flex items-center ">
-        <img className="h-14 w-14 mb-1" src="/logo-lofi.svg"  />
-        
-        <span className="inline-block font-bold">Lofi Focus</span>
-      </div>
-
-
-        </div> */}
 
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl ">
-              {/* <img className="h-14 w-14 mb-1" src="/logo-lofi.svg"  /> */}
               Welcome to Lofi focus, Login with
             </CardTitle>
           </CardHeader>
@@ -115,9 +102,6 @@ export default function DemoCreateAccount() {
               <Button className="mt-5 w-full">Log in</Button>
             </form>
           </CardContent>
-          {/* <CardFooter>
-        <Button className="w-full">Log in</Button>
-      </CardFooter> */}
         </Card>
       )}
     </div>
