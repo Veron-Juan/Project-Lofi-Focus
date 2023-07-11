@@ -182,7 +182,7 @@ export default async function IndexPage() {
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
-                href="/Community"
+                href="/community"
                 className={buttonVariants({
                   variant: "default",
                   size: "default",
