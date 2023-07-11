@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import AuthProvider from "@/components/AuthProvider/AuthProvider"
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,6 +41,7 @@ export default function RootLayout({
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               <div className="flex-1">{children}</div>
+              <Footer/>
             </div>
             {/* <TailwindIndicator /> */}
             </AuthProvider>
