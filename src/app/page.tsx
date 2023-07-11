@@ -123,8 +123,8 @@ export default async function IndexPage() {
             <h3 className="ml-6 scroll-m-20 text-4xl font-extrabold tracking-tight text-black dark:text-white md:ml-4 md:text-start lg:text-5xl  ">
               Lofi Music
             </h3>
-            <p className="px-7 text-justify md:px-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
+            <p className="px-7  md:px-4 break-words ">
+            Explore our collection of the best lofi songs, whether you need to concentrate, create a peaceful atmosphere or simply unwind from everyday stress. In addition, you can save your favorite songs in the favorites section, allowing you to easily access them at any time.
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
@@ -149,7 +149,7 @@ export default async function IndexPage() {
             </h3>
 
             <p className="px-7 text-justify md:px-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
+            Discover the power of productivity and focus with our Pomodoro technique section. The Pomodoro method is a proven strategy to maximize your time and get the most out of each work session.
 
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
@@ -188,7 +188,7 @@ export default async function IndexPage() {
               Community
             </h3>
             <p className="px-7 text-justify md:px-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illum repellat, architecto, quae atque ab culpa magnam suscipit est in voluptatum animi. Pariatur nemo, assumenda eveniet a maiores obcaecati sunt.
+            Join our lofi community and share your favorite songs. In our Community section, you have the opportunity to share and discover new lofi music. Share your favorite songs and find inspiration from other users' recommendations.
 
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">

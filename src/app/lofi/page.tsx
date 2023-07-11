@@ -321,12 +321,15 @@ export default function MusicPage() {
                                 </p>
                               </div>
                             )}
+                            {favorites.length > 0 && !selectFav &&   <h3 className="mb-4 mt-2 text-md font-semibold ">Select one</h3>}
                             {!selectFav || favorites.length === 0 ? null : (
+                              
                               
                               <VideoPlayer
                                 url={selectFav}
                                 thumbnailSrc={selectImgFav}
                               />
+                              
                             )}
                           </div>
 
