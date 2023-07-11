@@ -353,11 +353,7 @@ export default function MusicPage() {
                           
                           </div>
 
-                          {/* <h3 className="mt-4 text-lg font-semibold">No episodes added</h3>
-        <p className="mb-4 mt-2 text-sm text-muted-foreground">
-          You have not added any podcasts. Add one below.
-        </p>
-        <Button>Add favorites</Button> */}
+                        
                         </div>
                       </div>
                     </TabsContent>
