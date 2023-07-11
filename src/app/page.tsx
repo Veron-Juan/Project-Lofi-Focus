@@ -2,13 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Music, PlusCircle, TimerReset, Users } from "lucide-react"
 import { getServerSession } from "next-auth"
-import { useSession } from "next-auth/react"
-
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Card,
-  CardDescription,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 
@@ -29,9 +25,6 @@ export default async function IndexPage() {
 
         <div className="items-center overflow-x-hidden  md:flex  ">
           <div className="flex max-w-[900px] flex-col md:mb-[40px] md:flex-1   ">
-            {/* <h2 className=" my-3  leading-tight tracking-tighter md:text-4xl text-2xl  text-black dark:text-white">
-            Your space for relaxation and concentration.{" "}
-          </h2> */}
             <p className=" max-w-[600px] text-[16px] text-muted-foreground md:text-lg">
               On our website, you can find a wide variety of lofi music, share
               your favorite songs with other users and discover new artists and
@@ -85,7 +78,6 @@ export default async function IndexPage() {
             />
           </div>
         </div>
-
         <div className="mt-12  flex   gap-6 md:mt-6  ">
           <Card className=" flex h-[90px] w-[90px] items-center justify-center gap-3 hover:bg-neutral-200/90 dark:hover:bg-inherit  dark:hover:opacity-60 md:h-[120px] md:w-[120px] ">
             <CardTitle className="text-md flex flex-col items-center gap-2 ">
@@ -107,9 +99,6 @@ export default async function IndexPage() {
           </Card>
         </div>
       </section>
-
-      {/* <div className="max-w-[1000px]  flex justify-between items-start mt-2 gap-24 xs:gap-7 xs:flex-col xs:items-center" > */}
-
       <ContainerSlice>
         <div className=" mt-20 flex  flex-col items-center gap-6 md:mb-40 md:flex-row md:justify-center  md:px-6">
           <Image
@@ -134,7 +123,7 @@ export default async function IndexPage() {
                   size: "default",
                 })}
               >
-                Try Now lofi
+                Try Now
               </Link>
             </div>
           </div>
@@ -154,13 +143,13 @@ export default async function IndexPage() {
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
-                href="/lofi"
+                href="/pomodoro"
                 className={buttonVariants({
                   variant: "default",
                   size: "default",
                 })}
               >
-                Try Now lofi
+                Try Now 
               </Link>
             </div>
           </div>
@@ -193,13 +182,13 @@ export default async function IndexPage() {
             </p>
             <div className="ml-6 text-[15px] md:ml-3 md:text-start">
               <Link
-                href="/lofi"
+                href="/Community"
                 className={buttonVariants({
                   variant: "default",
                   size: "default",
                 })}
               >
-                Try Now lofi
+                Try Now
               </Link>
             </div>
           </div>
