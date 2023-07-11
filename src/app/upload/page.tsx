@@ -2,15 +2,10 @@
 
 import axios from "axios";
 import { FormEvent } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
+ 
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+ 
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -19,7 +14,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -27,7 +21,7 @@ import { useSession } from 'next-auth/react';
 
 import { useRouter } from "next/navigation";
 import { Toaster, toast  } from "sonner"
-import Image from "next/image";
+
 
 
 
